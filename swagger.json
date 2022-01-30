@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "This is a sample server Petstore server.",
+        "description": "test.",
         "title": "Swagger Example API",
         "termsOfService": "http://swagger.io/terms/",
         "contact": {
@@ -30,8 +30,7 @@
                     "account"
                 ],
                 "summary": "Creates an account on the service",
-                "parameters": [
-                    {
+                "parameters": [{
                         "maxLength": 320,
                         "minLength": 4,
                         "type": "string",
@@ -75,8 +74,7 @@
                     "account"
                 ],
                 "summary": "Sign Into Account",
-                "parameters": [
-                    {
+                "parameters": [{
                         "maxLength": 320,
                         "minLength": 4,
                         "type": "string",
@@ -115,8 +113,7 @@
                     "verify"
                 ],
                 "summary": "Gets the account by ID",
-                "parameters": [
-                    {
+                "parameters": [{
                         "type": "string",
                         "description": "Authentication header",
                         "name": "Auth",
@@ -153,15 +150,13 @@
                     "verify"
                 ],
                 "summary": "Gets all user accounts",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "Authentication header",
-                        "name": "Auth",
-                        "in": "header",
-                        "required": true
-                    }
-                ],
+                "parameters": [{
+                    "type": "string",
+                    "description": "Authentication header",
+                    "name": "Auth",
+                    "in": "header",
+                    "required": true
+                }],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -187,15 +182,13 @@
                     "verify"
                 ],
                 "summary": "Gets all user accounts",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "Authentication header",
-                        "name": "Auth",
-                        "in": "header",
-                        "required": true
-                    }
-                ],
+                "parameters": [{
+                    "type": "string",
+                    "description": "Authentication header",
+                    "name": "Auth",
+                    "in": "header",
+                    "required": true
+                }],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -221,8 +214,7 @@
                     "verify"
                 ],
                 "summary": "Gets the user account role by ID",
-                "parameters": [
-                    {
+                "parameters": [{
                         "type": "string",
                         "description": "Authentication header",
                         "name": "Auth",
@@ -260,8 +252,7 @@
                     "verify"
                 ],
                 "summary": "Deletes user by ID",
-                "parameters": [
-                    {
+                "parameters": [{
                         "type": "string",
                         "description": "Authentication header",
                         "name": "Auth",
@@ -295,15 +286,13 @@
                     "verify"
                 ],
                 "summary": "Verifies an email with a UID sent to the account email",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "uid from email",
-                        "name": "uid",
-                        "in": "query",
-                        "required": true
-                    }
-                ],
+                "parameters": [{
+                    "type": "string",
+                    "description": "uid from email",
+                    "name": "uid",
+                    "in": "query",
+                    "required": true
+                }],
                 "responses": {
                     "200": {
                         "description": ""
@@ -323,15 +312,13 @@
                     "verify"
                 ],
                 "summary": "Gets the user account information",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "Authentication header",
-                        "name": "Auth",
-                        "in": "header",
-                        "required": true
-                    }
-                ],
+                "parameters": [{
+                    "type": "string",
+                    "description": "Authentication header",
+                    "name": "Auth",
+                    "in": "header",
+                    "required": true
+                }],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -352,8 +339,7 @@
                     "verify"
                 ],
                 "summary": "Deletes user by ID",
-                "parameters": [
-                    {
+                "parameters": [{
                         "type": "string",
                         "description": "Authentication header",
                         "name": "Auth",
@@ -387,8 +373,7 @@
                     "Project"
                 ],
                 "summary": "Updates a user account role by ID",
-                "parameters": [
-                    {
+                "parameters": [{
                         "type": "string",
                         "description": "Authentication header as token",
                         "name": "Authentication",
@@ -436,15 +421,13 @@
                     "verify"
                 ],
                 "summary": "Gets the user account role by account ID",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "Authentication header",
-                        "name": "Auth",
-                        "in": "header",
-                        "required": true
-                    }
-                ],
+                "parameters": [{
+                    "type": "string",
+                    "description": "Authentication header",
+                    "name": "Auth",
+                    "in": "header",
+                    "required": true
+                }],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -468,15 +451,13 @@
                     "verify"
                 ],
                 "summary": "Creates a user account role",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "Authentication header",
-                        "name": "Auth",
-                        "in": "header",
-                        "required": true
-                    }
-                ],
+                "parameters": [{
+                    "type": "string",
+                    "description": "Authentication header",
+                    "name": "Auth",
+                    "in": "header",
+                    "required": true
+                }],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -499,15 +480,13 @@
                     "verify"
                 ],
                 "summary": "Gets the user account role by user ID and account ID",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "Authentication header",
-                        "name": "Auth",
-                        "in": "header",
-                        "required": true
-                    }
-                ],
+                "parameters": [{
+                    "type": "string",
+                    "description": "Authentication header",
+                    "name": "Auth",
+                    "in": "header",
+                    "required": true
+                }],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -533,15 +512,13 @@
                     "verify"
                 ],
                 "summary": "Gets the user account information",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "Authentication header",
-                        "name": "Auth",
-                        "in": "header",
-                        "required": true
-                    }
-                ],
+                "parameters": [{
+                    "type": "string",
+                    "description": "Authentication header",
+                    "name": "Auth",
+                    "in": "header",
+                    "required": true
+                }],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -564,8 +541,7 @@
                     "Project"
                 ],
                 "summary": "Updates a user account by ID",
-                "parameters": [
-                    {
+                "parameters": [{
                         "type": "string",
                         "description": "Authentication header as token",
                         "name": "Authentication",
@@ -607,8 +583,7 @@
                     "Project"
                 ],
                 "summary": "Updates a user account by ID",
-                "parameters": [
-                    {
+                "parameters": [{
                         "type": "string",
                         "description": "Authentication header as token",
                         "name": "Authentication",
