@@ -41,7 +41,7 @@ var doc = `{
                     "application/json"
                 ],
                 "tags": [
-                    "account"
+                    "User Account Auth"
                 ],
                 "summary": "Creates an account on the service",
                 "parameters": [
@@ -86,7 +86,7 @@ var doc = `{
                     "application/json"
                 ],
                 "tags": [
-                    "account"
+                    "User Account Auth"
                 ],
                 "summary": "Sign Into Account",
                 "parameters": [
@@ -126,7 +126,7 @@ var doc = `{
                     "application/json"
                 ],
                 "tags": [
-                    "verify"
+                    "User Account Role"
                 ],
                 "summary": "Gets the account by ID",
                 "parameters": [
@@ -164,7 +164,7 @@ var doc = `{
                     "application/json"
                 ],
                 "tags": [
-                    "verify"
+                    "Admin"
                 ],
                 "summary": "Gets all user accounts",
                 "parameters": [
@@ -198,7 +198,7 @@ var doc = `{
                     "application/json"
                 ],
                 "tags": [
-                    "verify"
+                    "Admin"
                 ],
                 "summary": "Gets all user accounts",
                 "parameters": [
@@ -232,7 +232,7 @@ var doc = `{
                     "application/json"
                 ],
                 "tags": [
-                    "verify"
+                    "User Account Role"
                 ],
                 "summary": "Gets the user account role by ID",
                 "parameters": [
@@ -271,7 +271,7 @@ var doc = `{
                     "application/json"
                 ],
                 "tags": [
-                    "verify"
+                    "User Account Role"
                 ],
                 "summary": "Deletes user by ID",
                 "parameters": [
@@ -306,7 +306,7 @@ var doc = `{
                     "application/json"
                 ],
                 "tags": [
-                    "verify"
+                    "User Account Auth"
                 ],
                 "summary": "Verifies an email with a UID sent to the account email",
                 "parameters": [
@@ -334,7 +334,7 @@ var doc = `{
                     "application/json"
                 ],
                 "tags": [
-                    "verify"
+                    "User Account Auth"
                 ],
                 "summary": "Gets the user account information",
                 "parameters": [
@@ -363,7 +363,7 @@ var doc = `{
                     "application/json"
                 ],
                 "tags": [
-                    "verify"
+                    "User Account"
                 ],
                 "summary": "Deletes user by ID",
                 "parameters": [
@@ -398,7 +398,7 @@ var doc = `{
                     "application/json"
                 ],
                 "tags": [
-                    "Project"
+                    "User Account Role"
                 ],
                 "summary": "Updates a user account role by ID",
                 "parameters": [
@@ -447,7 +447,7 @@ var doc = `{
                     "application/json"
                 ],
                 "tags": [
-                    "verify"
+                    "User Account Role"
                 ],
                 "summary": "Gets the user account role by account ID",
                 "parameters": [
@@ -479,7 +479,7 @@ var doc = `{
                     "application/json"
                 ],
                 "tags": [
-                    "verify"
+                    "User Account Role"
                 ],
                 "summary": "Creates a user account role",
                 "parameters": [
@@ -510,7 +510,7 @@ var doc = `{
                     "application/json"
                 ],
                 "tags": [
-                    "verify"
+                    "User Account Role"
                 ],
                 "summary": "Gets the user account role by user ID and account ID",
                 "parameters": [
@@ -544,7 +544,7 @@ var doc = `{
                     "application/json"
                 ],
                 "tags": [
-                    "verify"
+                    "User Account"
                 ],
                 "summary": "Gets the user account information",
                 "parameters": [
@@ -575,7 +575,7 @@ var doc = `{
                     "application/json"
                 ],
                 "tags": [
-                    "Project"
+                    "User Account"
                 ],
                 "summary": "Updates a user account by ID",
                 "parameters": [
@@ -618,7 +618,7 @@ var doc = `{
                     "application/json"
                 ],
                 "tags": [
-                    "Project"
+                    "User Account"
                 ],
                 "summary": "Updates a user account by ID",
                 "parameters": [

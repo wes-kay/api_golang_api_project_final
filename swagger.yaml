@@ -151,7 +151,7 @@ paths:
           description: ""
       summary: Creates an account on the service
       tags:
-      - account
+      - User Account Auth
   /signin:
     post:
       consumes:
@@ -178,7 +178,7 @@ paths:
             $ref: '#/definitions/model.UserAccountSigninResponse'
       summary: Sign Into Account
       tags:
-      - account
+      - User Account Auth
   /v1/account/{id}:
     get:
       consumes:
@@ -203,7 +203,7 @@ paths:
             $ref: '#/definitions/model.Account'
       summary: Gets the account by ID
       tags:
-      - verify
+      - User Account Role
   /v1/admin/accounts:
     get:
       consumes:
@@ -225,7 +225,7 @@ paths:
             type: array
       summary: Gets all user accounts
       tags:
-      - verify
+      - Admin
   /v1/admin/user-accounts:
     get:
       consumes:
@@ -247,7 +247,7 @@ paths:
             type: array
       summary: Gets all user accounts
       tags:
-      - verify
+      - Admin
   /v1/role/{id}:
     delete:
       consumes:
@@ -270,7 +270,7 @@ paths:
           description: ""
       summary: Deletes user by ID
       tags:
-      - verify
+      - User Account Role
     get:
       consumes:
       - application/json
@@ -296,7 +296,7 @@ paths:
             type: array
       summary: Gets the user account role by ID
       tags:
-      - verify
+      - User Account Role
   /v1/signup/{uid}:
     post:
       consumes:
@@ -314,7 +314,7 @@ paths:
           description: ""
       summary: Verifies an email with a UID sent to the account email
       tags:
-      - verify
+      - User Account Auth
   /v1/user-account:
     delete:
       consumes:
@@ -337,7 +337,7 @@ paths:
           description: ""
       summary: Deletes user by ID
       tags:
-      - verify
+      - User Account
     get:
       consumes:
       - application/json
@@ -356,7 +356,7 @@ paths:
             $ref: '#/definitions/model.UserAccountFull'
       summary: Gets the user account information
       tags:
-      - verify
+      - User Account Auth
   /v1/user-account-role/{id}:
     put:
       consumes:
@@ -389,7 +389,7 @@ paths:
           description: ""
       summary: Updates a user account role by ID
       tags:
-      - Project
+      - User Account Role
   /v1/user-account-roles/{id}:
     get:
       consumes:
@@ -411,7 +411,7 @@ paths:
             type: array
       summary: Gets the user account role by account ID
       tags:
-      - verify
+      - User Account Role
     post:
       consumes:
       - application/json
@@ -430,7 +430,7 @@ paths:
             $ref: '#/definitions/model.UpdateUserAccountRoleDTO'
       summary: Creates a user account role
       tags:
-      - verify
+      - User Account Role
   /v1/user-account-roles/{user-id}/{account-id}:
     get:
       consumes:
@@ -452,7 +452,7 @@ paths:
             type: array
       summary: Gets the user account role by user ID and account ID
       tags:
-      - verify
+      - User Account Role
   /v1/user-account/{id}:
     get:
       consumes:
@@ -472,7 +472,7 @@ paths:
             $ref: '#/definitions/model.UserAccountFull'
       summary: Gets the user account information
       tags:
-      - verify
+      - User Account
   /v1/user-account/{id}/name:
     put:
       consumes:
@@ -501,7 +501,7 @@ paths:
           description: ""
       summary: Updates a user account by ID
       tags:
-      - Project
+      - User Account
   /v1/user-account/{id}/password:
     put:
       consumes:
@@ -536,5 +536,5 @@ paths:
           description: ""
       summary: Updates a user account by ID
       tags:
-      - Project
+      - User Account
 swagger: "2.0"
