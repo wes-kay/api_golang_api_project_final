@@ -494,6 +494,69 @@ paths:
       summary: Gets the user account information
       tags:
       - verify
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authentication header as token
+        in: header
+        name: Authentication
+        required: true
+        type: string
+      - description: ID for user account
+        in: query
+        name: id
+        required: true
+        type: string
+      - in: formData
+        maxLength: 122
+        minLength: 4
+        name: address
+        type: string
+      - in: formData
+        maxLength: 122
+        minLength: 4
+        name: country
+        type: string
+      - in: formData
+        maxLength: 122
+        minLength: 4
+        name: description
+        type: string
+      - in: formData
+        maxLength: 122
+        minLength: 4
+        name: image
+        type: string
+      - in: formData
+        maxLength: 320
+        minLength: 4
+        name: name
+        required: true
+        type: string
+      - in: formData
+        maxLength: 12
+        minLength: 4
+        name: phone
+        type: string
+      - in: formData
+        maxLength: 122
+        minLength: 4
+        name: timezone
+        type: string
+      - in: formData
+        maxLength: 122
+        minLength: 4
+        name: website
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Updates a user account
+      tags:
+      - Project
   /v1/user-account/{id}/name:
     put:
       consumes:

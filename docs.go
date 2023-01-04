@@ -557,6 +557,96 @@ const docTemplate = `{
                         }
                     }
                 }
+            },
+            "put": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Project"
+                ],
+                "summary": "Updates a user account",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authentication header as token",
+                        "name": "Authentication",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "ID for user account",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "maxLength": 122,
+                        "minLength": 4,
+                        "type": "string",
+                        "name": "address",
+                        "in": "formData"
+                    },
+                    {
+                        "maxLength": 122,
+                        "minLength": 4,
+                        "type": "string",
+                        "name": "country",
+                        "in": "formData"
+                    },
+                    {
+                        "maxLength": 122,
+                        "minLength": 4,
+                        "type": "string",
+                        "name": "description",
+                        "in": "formData"
+                    },
+                    {
+                        "maxLength": 122,
+                        "minLength": 4,
+                        "type": "string",
+                        "name": "image",
+                        "in": "formData"
+                    },
+                    {
+                        "maxLength": 320,
+                        "minLength": 4,
+                        "type": "string",
+                        "name": "name",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "maxLength": 12,
+                        "minLength": 4,
+                        "type": "string",
+                        "name": "phone",
+                        "in": "formData"
+                    },
+                    {
+                        "maxLength": 122,
+                        "minLength": 4,
+                        "type": "string",
+                        "name": "timezone",
+                        "in": "formData"
+                    },
+                    {
+                        "maxLength": 122,
+                        "minLength": 4,
+                        "type": "string",
+                        "name": "website",
+                        "in": "formData"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
             }
         },
         "/v1/user-account/{id}/name": {
