@@ -172,7 +172,7 @@ paths:
           description: OK
       summary: Creates an account on the service
       tags:
-      - account
+      - Validation
   /signin:
     post:
       consumes:
@@ -199,7 +199,7 @@ paths:
             $ref: '#/definitions/model.UserAccountSigninResponse'
       summary: Sign Into Account
       tags:
-      - account
+      - Validation
   /v1/account/{id}:
     get:
       consumes:
@@ -224,7 +224,7 @@ paths:
             $ref: '#/definitions/model.Account'
       summary: Gets the account by ID
       tags:
-      - verify
+      - User Account
   /v1/admin/accounts:
     get:
       consumes:
@@ -246,7 +246,7 @@ paths:
             type: array
       summary: Gets all user accounts
       tags:
-      - verify
+      - Admin
   /v1/admin/user-accounts:
     get:
       consumes:
@@ -268,7 +268,7 @@ paths:
             type: array
       summary: Gets all user accounts
       tags:
-      - verify
+      - Admin
   /v1/role/{id}:
     delete:
       consumes:
@@ -291,7 +291,7 @@ paths:
           description: OK
       summary: Deletes user by ID
       tags:
-      - verify
+      - User Account Role
     get:
       consumes:
       - application/json
@@ -317,7 +317,7 @@ paths:
             type: array
       summary: Gets the user account role by ID
       tags:
-      - verify
+      - User Account Role
   /v1/signup/{uid}:
     post:
       consumes:
@@ -335,7 +335,7 @@ paths:
           description: OK
       summary: Verifies an email with a UID sent to the account email
       tags:
-      - verify
+      - Validation
   /v1/user-account:
     delete:
       consumes:
@@ -358,7 +358,7 @@ paths:
           description: OK
       summary: Deletes user by ID
       tags:
-      - verify
+      - User Account
     get:
       consumes:
       - application/json
@@ -375,9 +375,9 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/model.UserAccountFull'
-      summary: Gets the user account information
+      summary: Gets the meta user account information
       tags:
-      - verify
+      - User Account
   /v1/user-account-role/{id}:
     put:
       consumes:
@@ -410,7 +410,7 @@ paths:
           description: OK
       summary: Updates a user account role by ID
       tags:
-      - Project
+      - User Account Role
   /v1/user-account-roles/{id}:
     get:
       consumes:
@@ -432,7 +432,7 @@ paths:
             type: array
       summary: Gets the user account role by account ID
       tags:
-      - verify
+      - User Account Role
     post:
       consumes:
       - application/json
@@ -451,7 +451,7 @@ paths:
             $ref: '#/definitions/model.UpdateUserAccountRoleDTO'
       summary: Creates a user account role
       tags:
-      - verify
+      - User Role
   /v1/user-account-roles/{user-id}/{account-id}:
     get:
       consumes:
@@ -473,7 +473,7 @@ paths:
             type: array
       summary: Gets the user account role by user ID and account ID
       tags:
-      - verify
+      - User Account Role
   /v1/user-account/{id}:
     get:
       consumes:
@@ -491,9 +491,9 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/model.UserAccountFull'
-      summary: Gets the user account information
+      summary: Gets the user account information by ID
       tags:
-      - verify
+      - User Account
     put:
       consumes:
       - application/json
@@ -554,9 +554,9 @@ paths:
       responses:
         "200":
           description: OK
-      summary: Updates a user account
+      summary: Updates a user account by ID
       tags:
-      - Project
+      - User Account
   /v1/user-account/{id}/name:
     put:
       consumes:
@@ -583,9 +583,9 @@ paths:
       responses:
         "200":
           description: OK
-      summary: Updates a user account by ID
+      summary: Updates a user account name by ID
       tags:
-      - Project
+      - User Account
   /v1/user-account/{id}/password:
     put:
       consumes:
@@ -618,9 +618,9 @@ paths:
       responses:
         "200":
           description: OK
-      summary: Updates a user account by ID
+      summary: Updates a user account password by ID
       tags:
-      - Project
+      - User Account
   /v1/user-dashboard:
     get:
       consumes:
@@ -640,5 +640,5 @@ paths:
             $ref: '#/definitions/model.Dashboard'
       summary: Gets the user dashboard
       tags:
-      - verify
+      - Dashboard
 swagger: "2.0"

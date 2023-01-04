@@ -34,7 +34,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "account"
+                    "Validation"
                 ],
                 "summary": "Creates an account on the service",
                 "parameters": [
@@ -79,7 +79,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "account"
+                    "Validation"
                 ],
                 "summary": "Sign Into Account",
                 "parameters": [
@@ -119,7 +119,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "verify"
+                    "User Account"
                 ],
                 "summary": "Gets the account by ID",
                 "parameters": [
@@ -157,7 +157,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "verify"
+                    "Admin"
                 ],
                 "summary": "Gets all user accounts",
                 "parameters": [
@@ -191,7 +191,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "verify"
+                    "Admin"
                 ],
                 "summary": "Gets all user accounts",
                 "parameters": [
@@ -225,7 +225,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "verify"
+                    "User Account Role"
                 ],
                 "summary": "Gets the user account role by ID",
                 "parameters": [
@@ -264,7 +264,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "verify"
+                    "User Account Role"
                 ],
                 "summary": "Deletes user by ID",
                 "parameters": [
@@ -299,7 +299,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "verify"
+                    "Validation"
                 ],
                 "summary": "Verifies an email with a UID sent to the account email",
                 "parameters": [
@@ -327,9 +327,9 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "verify"
+                    "User Account"
                 ],
-                "summary": "Gets the user account information",
+                "summary": "Gets the meta user account information",
                 "parameters": [
                     {
                         "type": "string",
@@ -356,7 +356,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "verify"
+                    "User Account"
                 ],
                 "summary": "Deletes user by ID",
                 "parameters": [
@@ -391,7 +391,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "Project"
+                    "User Account Role"
                 ],
                 "summary": "Updates a user account role by ID",
                 "parameters": [
@@ -440,7 +440,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "verify"
+                    "User Account Role"
                 ],
                 "summary": "Gets the user account role by account ID",
                 "parameters": [
@@ -472,7 +472,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "verify"
+                    "User Role"
                 ],
                 "summary": "Creates a user account role",
                 "parameters": [
@@ -503,7 +503,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "verify"
+                    "User Account Role"
                 ],
                 "summary": "Gets the user account role by user ID and account ID",
                 "parameters": [
@@ -537,9 +537,9 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "verify"
+                    "User Account"
                 ],
-                "summary": "Gets the user account information",
+                "summary": "Gets the user account information by ID",
                 "parameters": [
                     {
                         "type": "string",
@@ -566,9 +566,9 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "Project"
+                    "User Account"
                 ],
-                "summary": "Updates a user account",
+                "summary": "Updates a user account by ID",
                 "parameters": [
                     {
                         "type": "string",
@@ -658,9 +658,9 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "Project"
+                    "User Account"
                 ],
-                "summary": "Updates a user account by ID",
+                "summary": "Updates a user account name by ID",
                 "parameters": [
                     {
                         "type": "string",
@@ -701,9 +701,9 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "Project"
+                    "User Account"
                 ],
-                "summary": "Updates a user account by ID",
+                "summary": "Updates a user account password by ID",
                 "parameters": [
                     {
                         "type": "string",
@@ -752,7 +752,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "verify"
+                    "Dashboard"
                 ],
                 "summary": "Gets the user dashboard",
                 "parameters": [
