@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "This is a sample server Petstore server.",
+        "description": "\"\"",
         "title": "Swagger Example API",
         "termsOfService": "http://swagger.io/terms/",
         "contact": {
@@ -27,7 +27,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "User Account Auth"
+                    "account"
                 ],
                 "summary": "Creates an account on the service",
                 "parameters": [
@@ -58,7 +58,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK"
                     }
                 }
             }
@@ -72,7 +72,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "User Account Auth"
+                    "account"
                 ],
                 "summary": "Sign Into Account",
                 "parameters": [
@@ -112,7 +112,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "User Account Role"
+                    "verify"
                 ],
                 "summary": "Gets the account by ID",
                 "parameters": [
@@ -150,7 +150,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "Admin"
+                    "verify"
                 ],
                 "summary": "Gets all user accounts",
                 "parameters": [
@@ -184,7 +184,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "Admin"
+                    "verify"
                 ],
                 "summary": "Gets all user accounts",
                 "parameters": [
@@ -218,7 +218,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "User Account Role"
+                    "verify"
                 ],
                 "summary": "Gets the user account role by ID",
                 "parameters": [
@@ -257,7 +257,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "User Account Role"
+                    "verify"
                 ],
                 "summary": "Deletes user by ID",
                 "parameters": [
@@ -278,7 +278,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK"
                     }
                 }
             }
@@ -292,7 +292,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "User Account Auth"
+                    "verify"
                 ],
                 "summary": "Verifies an email with a UID sent to the account email",
                 "parameters": [
@@ -306,7 +306,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK"
                     }
                 }
             }
@@ -320,7 +320,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "User Account Auth"
+                    "verify"
                 ],
                 "summary": "Gets the user account information",
                 "parameters": [
@@ -349,7 +349,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "User Account"
+                    "verify"
                 ],
                 "summary": "Deletes user by ID",
                 "parameters": [
@@ -370,7 +370,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK"
                     }
                 }
             }
@@ -384,7 +384,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "User Account Role"
+                    "Project"
                 ],
                 "summary": "Updates a user account role by ID",
                 "parameters": [
@@ -419,7 +419,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK"
                     }
                 }
             }
@@ -433,7 +433,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "User Account Role"
+                    "verify"
                 ],
                 "summary": "Gets the user account role by account ID",
                 "parameters": [
@@ -465,7 +465,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "User Account Role"
+                    "verify"
                 ],
                 "summary": "Creates a user account role",
                 "parameters": [
@@ -496,7 +496,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "User Account Role"
+                    "verify"
                 ],
                 "summary": "Gets the user account role by user ID and account ID",
                 "parameters": [
@@ -530,7 +530,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "User Account"
+                    "verify"
                 ],
                 "summary": "Gets the user account information",
                 "parameters": [
@@ -561,7 +561,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "User Account"
+                    "Project"
                 ],
                 "summary": "Updates a user account by ID",
                 "parameters": [
@@ -590,7 +590,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK"
                     }
                 }
             }
@@ -604,7 +604,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "User Account"
+                    "Project"
                 ],
                 "summary": "Updates a user account by ID",
                 "parameters": [
@@ -641,7 +641,38 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/v1/user-dashboard": {
+            "get": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "verify"
+                ],
+                "summary": "Gets the user dashboard",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authentication header",
+                        "name": "Auth",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/model.Dashboard"
+                        }
                     }
                 }
             }
@@ -674,6 +705,9 @@
                 }
             }
         },
+        "model.Dashboard": {
+            "type": "object"
+        },
         "model.UpdateUserAccountRoleDTO": {
             "type": "object",
             "required": [
@@ -702,6 +736,9 @@
                 },
                 "id": {
                     "type": "integer"
+                },
+                "image": {
+                    "type": "string"
                 },
                 "name": {
                     "type": "string"
@@ -751,6 +788,9 @@
                 },
                 "uai": {
                     "$ref": "#/definitions/model.UserAccountInformation"
+                },
+                "uam": {
+                    "$ref": "#/definitions/model.UserAccountMedia"
                 }
             }
         },
@@ -769,7 +809,30 @@
                 "phone": {
                     "type": "string"
                 },
+                "timezone": {
+                    "type": "string"
+                },
                 "updated": {
+                    "type": "string"
+                }
+            }
+        },
+        "model.UserAccountMedia": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "image": {
+                    "type": "string"
+                },
+                "updated": {
+                    "type": "string"
+                },
+                "website": {
                     "type": "string"
                 }
             }

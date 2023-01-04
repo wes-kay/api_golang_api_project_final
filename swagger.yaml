@@ -17,6 +17,8 @@ definitions:
       updated:
         type: string
     type: object
+  model.Dashboard:
+    type: object
   model.UpdateUserAccountRoleDTO:
     properties:
       role:
@@ -37,6 +39,8 @@ definitions:
         type: string
       id:
         type: integer
+      image:
+        type: string
       name:
         type: string
       uid:
@@ -69,6 +73,8 @@ definitions:
         $ref: '#/definitions/model.UserAccountAdministration'
       uai:
         $ref: '#/definitions/model.UserAccountInformation'
+      uam:
+        $ref: '#/definitions/model.UserAccountMedia'
     type: object
   model.UserAccountInformation:
     properties:
@@ -80,7 +86,22 @@ definitions:
         type: integer
       phone:
         type: string
+      timezone:
+        type: string
       updated:
+        type: string
+    type: object
+  model.UserAccountMedia:
+    properties:
+      description:
+        type: string
+      id:
+        type: integer
+      image:
+        type: string
+      updated:
+        type: string
+      website:
         type: string
     type: object
   model.UserAccountRole:
@@ -113,7 +134,7 @@ info:
     email: support@swagger.io
     name: API Support
     url: http://www.swagger.io/support
-  description: This is a sample server Petstore server.
+  description: '""'
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
@@ -148,10 +169,10 @@ paths:
       - application/json
       responses:
         "200":
-          description: ""
+          description: OK
       summary: Creates an account on the service
       tags:
-      - User Account Auth
+      - account
   /signin:
     post:
       consumes:
@@ -178,7 +199,7 @@ paths:
             $ref: '#/definitions/model.UserAccountSigninResponse'
       summary: Sign Into Account
       tags:
-      - User Account Auth
+      - account
   /v1/account/{id}:
     get:
       consumes:
@@ -203,7 +224,7 @@ paths:
             $ref: '#/definitions/model.Account'
       summary: Gets the account by ID
       tags:
-      - User Account Role
+      - verify
   /v1/admin/accounts:
     get:
       consumes:
@@ -225,7 +246,7 @@ paths:
             type: array
       summary: Gets all user accounts
       tags:
-      - Admin
+      - verify
   /v1/admin/user-accounts:
     get:
       consumes:
@@ -247,7 +268,7 @@ paths:
             type: array
       summary: Gets all user accounts
       tags:
-      - Admin
+      - verify
   /v1/role/{id}:
     delete:
       consumes:
@@ -267,10 +288,10 @@ paths:
       - application/json
       responses:
         "200":
-          description: ""
+          description: OK
       summary: Deletes user by ID
       tags:
-      - User Account Role
+      - verify
     get:
       consumes:
       - application/json
@@ -296,7 +317,7 @@ paths:
             type: array
       summary: Gets the user account role by ID
       tags:
-      - User Account Role
+      - verify
   /v1/signup/{uid}:
     post:
       consumes:
@@ -311,10 +332,10 @@ paths:
       - application/json
       responses:
         "200":
-          description: ""
+          description: OK
       summary: Verifies an email with a UID sent to the account email
       tags:
-      - User Account Auth
+      - verify
   /v1/user-account:
     delete:
       consumes:
@@ -334,10 +355,10 @@ paths:
       - application/json
       responses:
         "200":
-          description: ""
+          description: OK
       summary: Deletes user by ID
       tags:
-      - User Account
+      - verify
     get:
       consumes:
       - application/json
@@ -356,7 +377,7 @@ paths:
             $ref: '#/definitions/model.UserAccountFull'
       summary: Gets the user account information
       tags:
-      - User Account Auth
+      - verify
   /v1/user-account-role/{id}:
     put:
       consumes:
@@ -386,10 +407,10 @@ paths:
       - application/json
       responses:
         "200":
-          description: ""
+          description: OK
       summary: Updates a user account role by ID
       tags:
-      - User Account Role
+      - Project
   /v1/user-account-roles/{id}:
     get:
       consumes:
@@ -411,7 +432,7 @@ paths:
             type: array
       summary: Gets the user account role by account ID
       tags:
-      - User Account Role
+      - verify
     post:
       consumes:
       - application/json
@@ -430,7 +451,7 @@ paths:
             $ref: '#/definitions/model.UpdateUserAccountRoleDTO'
       summary: Creates a user account role
       tags:
-      - User Account Role
+      - verify
   /v1/user-account-roles/{user-id}/{account-id}:
     get:
       consumes:
@@ -452,7 +473,7 @@ paths:
             type: array
       summary: Gets the user account role by user ID and account ID
       tags:
-      - User Account Role
+      - verify
   /v1/user-account/{id}:
     get:
       consumes:
@@ -472,7 +493,7 @@ paths:
             $ref: '#/definitions/model.UserAccountFull'
       summary: Gets the user account information
       tags:
-      - User Account
+      - verify
   /v1/user-account/{id}/name:
     put:
       consumes:
@@ -498,10 +519,10 @@ paths:
       - application/json
       responses:
         "200":
-          description: ""
+          description: OK
       summary: Updates a user account by ID
       tags:
-      - User Account
+      - Project
   /v1/user-account/{id}/password:
     put:
       consumes:
@@ -533,8 +554,28 @@ paths:
       - application/json
       responses:
         "200":
-          description: ""
+          description: OK
       summary: Updates a user account by ID
       tags:
-      - User Account
+      - Project
+  /v1/user-dashboard:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authentication header
+        in: header
+        name: Auth
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Dashboard'
+      summary: Gets the user dashboard
+      tags:
+      - verify
 swagger: "2.0"
