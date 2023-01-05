@@ -142,7 +142,34 @@ info:
   title: Swagger Example API
   version: "1.0"
 paths:
-  /CreateUserAccount:
+  /signin:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - in: formData
+        maxLength: 320
+        minLength: 4
+        name: email
+        required: true
+        type: string
+      - in: formData
+        maxLength: 156
+        minLength: 8
+        name: password
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.UserAccountSigninResponse'
+      summary: Sign Into Account
+      tags:
+      - Validation
+  /signup:
     post:
       consumes:
       - application/json
@@ -171,33 +198,6 @@ paths:
         "200":
           description: OK
       summary: Creates an account on the service
-      tags:
-      - Validation
-  /signin:
-    post:
-      consumes:
-      - application/json
-      parameters:
-      - in: formData
-        maxLength: 320
-        minLength: 4
-        name: email
-        required: true
-        type: string
-      - in: formData
-        maxLength: 156
-        minLength: 8
-        name: password
-        required: true
-        type: string
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/model.UserAccountSigninResponse'
-      summary: Sign Into Account
       tags:
       - Validation
   /v1/account/{id}:

@@ -25,7 +25,47 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/CreateUserAccount": {
+        "/signin": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Validation"
+                ],
+                "summary": "Sign Into Account",
+                "parameters": [
+                    {
+                        "maxLength": 320,
+                        "minLength": 4,
+                        "type": "string",
+                        "name": "email",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "maxLength": 156,
+                        "minLength": 8,
+                        "type": "string",
+                        "name": "password",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/model.UserAccountSigninResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/signup": {
             "post": {
                 "consumes": [
                     "application/json"
@@ -66,46 +106,6 @@ const docTemplate = `{
                 "responses": {
                     "200": {
                         "description": "OK"
-                    }
-                }
-            }
-        },
-        "/signin": {
-            "post": {
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "Validation"
-                ],
-                "summary": "Sign Into Account",
-                "parameters": [
-                    {
-                        "maxLength": 320,
-                        "minLength": 4,
-                        "type": "string",
-                        "name": "email",
-                        "in": "formData",
-                        "required": true
-                    },
-                    {
-                        "maxLength": 156,
-                        "minLength": 8,
-                        "type": "string",
-                        "name": "password",
-                        "in": "formData",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/model.UserAccountSigninResponse"
-                        }
                     }
                 }
             }
