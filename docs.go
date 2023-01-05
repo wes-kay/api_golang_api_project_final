@@ -301,11 +301,11 @@ const docTemplate = `{
                 "tags": [
                     "Validation"
                 ],
-                "summary": "Verifies an email with a UID sent to the account email",
+                "summary": "Verifies an email with a UUID sent to the account email",
                 "parameters": [
                     {
                         "type": "string",
-                        "description": "uid from email",
+                        "description": "uuid from email",
                         "name": "uid",
                         "in": "query",
                         "required": true
@@ -431,7 +431,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/v1/user-account-roles/{id}": {
+        "/v1/user-account-roles/account/{id}": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -463,6 +463,47 @@ const docTemplate = `{
                         }
                     }
                 }
+            }
+        },
+        "/v1/user-account-roles/{id}": {
+            "get": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "User Account Role"
+                ],
+                "summary": "Gets the user account role by ID",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authentication header",
+                        "name": "Auth",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "ID for account",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/model.UserAccountRole"
+                            }
+                        }
+                    }
+                }
             },
             "post": {
                 "consumes": [
@@ -472,7 +513,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "User Role"
+                    "User Account Role"
                 ],
                 "summary": "Creates a user account role",
                 "parameters": [
