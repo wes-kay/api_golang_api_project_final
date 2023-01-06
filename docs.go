@@ -142,7 +142,7 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/model.Account"
+                            "$ref": "#/definitions/model.GroupAccount"
                         }
                     }
                 }
@@ -175,7 +175,7 @@ const docTemplate = `{
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/model.Account"
+                                "$ref": "#/definitions/model.GroupAccount"
                             }
                         }
                     }
@@ -212,6 +212,34 @@ const docTemplate = `{
                                 "$ref": "#/definitions/model.UserAccount"
                             }
                         }
+                    }
+                }
+            }
+        },
+        "/v1/group-account/{user-id}": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Account"
+                ],
+                "summary": "Creates a group account under the user",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authentication header",
+                        "name": "Auth",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
                     }
                 }
             }
@@ -504,38 +532,9 @@ const docTemplate = `{
                         }
                     }
                 }
-            },
-            "post": {
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "User Account Role"
-                ],
-                "summary": "Creates a user account role",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "Authentication header",
-                        "name": "Auth",
-                        "in": "header",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/model.UpdateUserAccountRoleDTO"
-                        }
-                    }
-                }
             }
         },
-        "/v1/user-account-roles/{user-id}/{account-id}": {
+        "/v1/user-account-roles/{user-id}/{group-id}": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -546,7 +545,7 @@ const docTemplate = `{
                 "tags": [
                     "User Account Role"
                 ],
-                "summary": "Gets the user account role by user ID and account ID",
+                "summary": "Gets the user account role by user ID and group ID",
                 "parameters": [
                     {
                         "type": "string",
@@ -784,6 +783,37 @@ const docTemplate = `{
                 }
             }
         },
+        "/v1/user-account/{user-id}/group/{group-id}/role": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "User Account Role by user id and group id"
+                ],
+                "summary": "Creates a user account role",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authentication header",
+                        "name": "Auth",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/model.UpdateUserAccountRoleDTO"
+                        }
+                    }
+                }
+            }
+        },
         "/v1/user-dashboard": {
             "get": {
                 "consumes": [
@@ -817,7 +847,10 @@ const docTemplate = `{
         }
     },
     "definitions": {
-        "model.Account": {
+        "model.Dashboard": {
+            "type": "object"
+        },
+        "model.GroupAccount": {
             "type": "object",
             "properties": {
                 "created": {
@@ -842,9 +875,6 @@ const docTemplate = `{
                     "type": "string"
                 }
             }
-        },
-        "model.Dashboard": {
-            "type": "object"
         },
         "model.UpdateUserAccountRoleDTO": {
             "type": "object",
@@ -909,9 +939,6 @@ const docTemplate = `{
                 },
                 "status_name": {
                     "type": "string"
-                },
-                "temp": {
-                    "type": "boolean"
                 }
             }
         },
@@ -978,7 +1005,7 @@ const docTemplate = `{
         "model.UserAccountRole": {
             "type": "object",
             "properties": {
-                "fk_account_id": {
+                "fk_group_account_id": {
                     "type": "integer"
                 },
                 "fk_user_account_id": {
